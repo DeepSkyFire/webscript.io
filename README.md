@@ -33,7 +33,8 @@ end
 
 ## nodeping-to-datadog
 
-Use as a webhook notification for Nodeping, and forward to Datadog.
+Use as a webhook notification handler for Nodeping, and forward to Datadog as
+an event.
 
 ```lua
 local api_key="datadog_api_key"
