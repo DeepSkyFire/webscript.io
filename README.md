@@ -30,3 +30,15 @@ else
   return 400, 'Not validated!
 end
 ```
+
+## nodeping-to-datadog
+
+Use as a webhook notification for Nodeping, and forward to Datadog.
+
+```lua
+local api_key="datadog_api_key"
+
+local bridge = require('jswank/webscript.io/nodeping-to-datadog.lua') 
+
+bridge.handle(api_key,request)
+```
