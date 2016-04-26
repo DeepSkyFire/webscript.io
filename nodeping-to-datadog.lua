@@ -1,6 +1,6 @@
 local handle = function (dd_api_key, request)
 
-  --- massage nodeping info into a DD event ---	
+	--- massage nodeping info into a DD event ---	
 	if request.query.m == nil then
 		request.query.m = "OK"
 	end
@@ -18,7 +18,7 @@ local handle = function (dd_api_key, request)
 		alert_type = "error"
 	end
 
-  -- create DD formatted event --
+	-- create DD formatted event --
 	local event = json.stringify({
 		aggregation_key = crypto.md5(request.query.tg).hexdigest(),
 		alert_type = alert_type,
@@ -31,7 +31,7 @@ local handle = function (dd_api_key, request)
 			request.query.label, request.query.event),
 	})
 
-  -- send event to datadog --
+	-- send event to datadog --
 	local status = http.request({
 		url = "https://app.datadoghq.com/api/v1/events?api_key=" .. api_key,
 		data = event,
