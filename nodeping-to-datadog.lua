@@ -1,4 +1,4 @@
-local handle = function (dd_api_key, request)
+local handle = function (api_key, request)
 
 	--- massage nodeping info into a DD event ---	
 	if request.query.m == nil then
