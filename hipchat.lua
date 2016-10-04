@@ -7,7 +7,7 @@ local send = function(room,token,message,color)
           ['Content-Type']='application/json'
       },
       data=json.stringify {
-        color=color
+        color=color,
         message=message,
         message_format='text'           
       }
