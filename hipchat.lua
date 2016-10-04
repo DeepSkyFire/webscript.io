@@ -1,4 +1,4 @@
-local send function(room,token,message,color)
+local send = function(room,token,message,color)
 
   local response = http.request({
       method='POST',
